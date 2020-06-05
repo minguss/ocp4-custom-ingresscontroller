@@ -15,7 +15,7 @@ spec:
         paths:
           - path: /
             backend:
-              serviceName: example
+              serviceName: f5-demo
               servicePort: 8080
 status:
   loadBalancer:
