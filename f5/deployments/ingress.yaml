@@ -1,0 +1,23 @@
+kind: Ingress
+apiVersion: networking.k8s.io/v1beta1
+metadata:
+  name: f5-demo
+  namespace: f5-demo
+  annotations:
+    virtual-server.f5.com/health: '[{"path": "/", "send": "HTTP GET /", "interval": 5, "timeout": 10}]'
+    virtual-server.f5.com/http-port: '80'
+    virtual-server.f5.com/ip: 192.168.1.21
+    virtual-server.f5.com/partition: openshift_AS3
+spec:
+  rules:
+    - host: mysite.f5demo.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: example
+              servicePort: 8080
+status:
+  loadBalancer:
+    ingress:
+      - ip: 192.168.1.21
