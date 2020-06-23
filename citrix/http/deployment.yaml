@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: citrix-apache
+  namespace: citrix
+spec:
+  selector:
+    matchLabels:
+      app: citrix-apache
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: citrix-apache
+    spec:
+      containers:
+        - name: citrix-apache
+          image: f5devcentral/f5-hello-world:develop
+          ports:
+            - containerPort: 8080
