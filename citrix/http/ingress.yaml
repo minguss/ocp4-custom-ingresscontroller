@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: vpx-ingress
+  namespace: citrix
+  annotations:
+    ingress.citrix.com/insecure-termination: allow
+    kubernetes.io/ingress.class: tier-1-vpx
+spec:
+  rules:
+    - host: citrix-ingress-apache.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: citrix-apache
+              servicePort: 8080
