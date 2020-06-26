@@ -1,8 +1,7 @@
 kind: Ingress
 apiVersion: networking.k8s.io/v1beta1
 metadata:
-  name: mysql
-  namespace: citrix-operators
+  name: citrix-redis
   annotations:
     ingress.citrix.com/insecure-port: '6379'
     ingress.citrix.com/insecure-service-type: tcp
