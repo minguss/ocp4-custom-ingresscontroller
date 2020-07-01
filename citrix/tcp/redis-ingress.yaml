@@ -8,13 +8,8 @@ metadata:
     ingress.citrix.com/insecure-termination: allow
     kubernetes.io/ingress.class: tier-1-vpx
 spec:
-  rules:
-    - host: redis.ocp.minguss.com
-      http:
-        paths:
-          - path: /
-            backend:
-              serviceName: redis
-              servicePort: 6379
+  backend:
+    serviceName: redis
+    servicePort: 6379
 status:
   loadBalancer: {}
