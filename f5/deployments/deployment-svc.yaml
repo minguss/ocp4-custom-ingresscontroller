@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: f5-http
-  namespace: f5
 spec:
   selector:
     matchLabels:
