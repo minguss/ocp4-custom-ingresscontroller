@@ -10,7 +10,7 @@ metadata:
     virtual-server.f5.com/partition: openshift_AS3
 spec:
   rules:
-    - host: mysite.f5demo.com
+    - host: http.f5.fusion.minguss.com
       http:
         paths:
           - path: /
