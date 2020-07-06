@@ -17,7 +17,3 @@ spec:
             backend:
               serviceName: f5-demo
               servicePort: 8080
-status:
-  loadBalancer:
-    ingress:
-      - ip: 192.168.1.21
